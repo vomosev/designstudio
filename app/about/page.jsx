@@ -36,6 +36,13 @@ const VALUES = [
   },
 ];
 
+const FACTS_BY_ID = Object.fromEntries(
+  STUDIO_FACTS.map((fact) => [fact.id, fact.value]),
+);
+const FOUNDED_YEAR = FACTS_BY_ID.founded;
+const CLIENTS_SERVED = FACTS_BY_ID.clients;
+const STUDIO_CITIES = FACTS_BY_ID.cities.split(/\s*&\s*/);
+
 export default function AboutPage() {
   return (
     <PageShell
@@ -48,7 +55,7 @@ export default function AboutPage() {
           <div className="prose">
             <h2 id="story-heading">How we got here</h2>
             <p>
-              Prism began in {STUDIO_FACTS.foundedYear} above a letterpress shop, with two
+              Prism began in {FOUNDED_YEAR} above a letterpress shop, with two
               designers, one borrowed proofing press and a stubborn belief that identity work
               should come with instructions. The first year was packaging for a family-run tea
               importer; the second added a ferry network, a music festival and a scientific
@@ -57,7 +64,7 @@ export default function AboutPage() {
             <p>
               Today we are a team of {TEAM.length} leads supported by a rotating bench of
               typographers, illustrators and motion designers. We have delivered work for{' '}
-              {STUDIO_FACTS.clientsServed} clients across {STUDIO_FACTS.cities.join(' and ')},
+              {CLIENTS_SERVED} clients across {STUDIO_CITIES.join(' and ')},
               and we still print everything before we sign it off.
             </p>
             <p>
@@ -71,13 +78,13 @@ export default function AboutPage() {
             <Artwork
               hue={12}
               hueEnd={268}
-              ratio="4 / 3"
+              ratio="4/3"
               label="Gradient study from the Prism Studio colour library"
             />
             <Artwork
               hue={188}
               hueEnd={44}
-              ratio="4 / 3"
+              ratio="4/3"
               label="Grid and typography study from the studio archive"
             />
           </div>
@@ -138,16 +145,16 @@ export default function AboutPage() {
         <h2 id="facts-heading">Studio facts</h2>
         <div className="stats-strip">
           <div className="stat">
-            <span className="stat__value">{STUDIO_FACTS.foundedYear}</span>
+            <span className="stat__value">{FOUNDED_YEAR}</span>
             <span className="stat__label">Founded</span>
           </div>
           <div className="stat">
-            <span className="stat__value">{STUDIO_FACTS.clientsServed}</span>
+            <span className="stat__value">{CLIENTS_SERVED}</span>
             <span className="stat__label">Clients served</span>
           </div>
           <div className="stat">
-            <span className="stat__value">{STUDIO_FACTS.cities.length}</span>
-            <span className="stat__label">Studios — {STUDIO_FACTS.cities.join(', ')}</span>
+            <span className="stat__value">{STUDIO_CITIES.length}</span>
+            <span className="stat__label">Studios — {STUDIO_CITIES.join(', ')}</span>
           </div>
           <div className="stat">
             <span className="stat__value">{PROCESS_STEPS.length}</span>
