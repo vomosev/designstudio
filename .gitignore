@@ -46,3 +46,6 @@ Thumbs.db
 *.crt
 *.key
 certs/
+
+# Added by install_backend.js — the deploy writes real secrets into .env
+node_modules
