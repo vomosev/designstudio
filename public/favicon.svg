@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Prism Studio mark">
+  <title>Prism Studio</title>
+  <defs>
+    <linearGradient id="prismFace" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff7a5c"/>
+      <stop offset="100%" stop-color="#e0533a"/>
+    </linearGradient>
+    <linearGradient id="prismEdge" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1b1f28"/>
+      <stop offset="100%" stop-color="#39414f"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0d0f14"/>
+  <path d="M32 11 L54 51 L32 51 Z" fill="url(#prismFace)"/>
+  <path d="M32 11 L10 51 L32 51 Z" fill="url(#prismEdge)"/>
+  <path d="M32 11 L54 51 L10 51 Z" fill="none" stroke="#ff7a5c" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M32 11 L32 51" stroke="#0d0f14" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+</svg>
